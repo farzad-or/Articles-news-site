@@ -13,6 +13,21 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+///////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////data base setup///////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+// handle mongoose collection.ensureIndex warn
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.connect('mongodb://localhost:27017/article-final-project', {
+useNewUrlParser: true,
+useUnifiedTopology: true
+});
+
+
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

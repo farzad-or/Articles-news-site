@@ -1,13 +1,13 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/auth');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/api');
+const usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////view engine setup/////////////////////////////////////
@@ -25,10 +25,12 @@ app.set('view engine', 'ejs');
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
-mongoose.connect('mongodb://localhost:27017/article-final-project', {
-useNewUrlParser: true,
-useUnifiedTopology: true
+
+mongoose.connect('mongodb://localhost:27017/article-bloger-comments', {
+	useNewUrlParser: true,
+	useUnifiedTopology: true
 });
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////end points and midlles wares/////////////////////////////////////

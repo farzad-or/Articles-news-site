@@ -3,6 +3,9 @@ const User = require('../model/user')
 const bcrypt = require('bcrypt')
 const saltRounds = 13;
 const router = express.Router();
+const Message = require('../models/message');
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////

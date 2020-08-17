@@ -1,24 +1,30 @@
-$("#btn-signup").click(function() {
-   
+$("#btn-signup").click(function () {
+
     let users = {
-        'userName': $('#signup-username').val(),
         'firstName': $('#signup-firstname').val(),
         'lastName': $('#signup-lastname').val(),
-        'password': $('#signup-password').val(),
-        'email': $('#signup-email').val(),
+        'userName': $('#signup-username').val(),
         'phones': $('#signup-phones').val(),
-        'gender': $('#gender-main').val()
+        'email': $('#signup-email').val(),
+        'password': $('#signup-password').val(),
+        'gender': $('#sex').val()
     }
-    console.log($('#signup-username').val());
-    console.log(users);
+    // console.log($('#signup-username').val());
+    // console.log(users);
 
     $.ajax({
         type: "POST",
         url: "/api/signUp",
         data: users,
         dataType: 'json',
+        
+        success: function (res) {
+            if (res.message = true) {
+                console.log("welcom");
+            } else {
+                console.log(res.message);
+            }
 
-        success: function (response) {
 
         }
     });

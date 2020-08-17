@@ -6,7 +6,6 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 
 const apiRouter = require('./routes/api');
-const indexRouter = require('./routes/index');
 
 
 const app = express();
@@ -46,7 +45,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', apiRouter);
-app.use('/index', indexRouter);
 
 
 

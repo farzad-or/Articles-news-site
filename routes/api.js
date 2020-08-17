@@ -1,6 +1,6 @@
 const express = require('express');
-const User = require('../model/user')
-const bcrypt = require('bcrypt')
+const User = require('../model/user');
+const bcrypt = require('bcrypt');
 const saltRounds = 13;
 const router = express.Router();
 
@@ -15,11 +15,9 @@ const router = express.Router();
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// GET SIGNUP PAGE    ///////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
-console.log("bye up");
 
 
-router.get("/signUp",(req, res) => {
-  console.log(1);
+router.get("/signUp", (req, res) => {
   res.render("pages/signUp")
 })
 
@@ -29,50 +27,103 @@ router.get("/signUp",(req, res) => {
 
 
 router.get("/signIn", (req, res) => {
-    res.render("pages/signIn")
-  })
-  
+  res.render("pages/signIn")
+})
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////  POST TO SIGNUP USER   ///////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 
 router.post('/signUp', async function (req, res) {
-console.log(req.body);
-})
-//   try {
-//     console.log(req.body);
-//     if (!req.body.userName || !req.body.password || !req.body.firstName || !req.body.lastName || !req.body.email || !req.body.gender || !req.body.phones) {
-//       throw new Error('You have an empty input.')
-//     };
-//     if (req.body.password.length < 8) {
-//       throw new Error('password error')
-//     };
-//     req.body.password = await bcrypt.hash(req.body.password, saltRounds);
-//     const newUser = new User({
-//       userName: req.body.userName,
-//       firstName: req.body.firstName,
-//       lastName: req.body.lastName,
-//       password: req.body.password,
-//       email: req.body.email,
-//       phones: req.body.phones,
-//       gender: req.body.gender
-//     })
+  console.log(req.body );
+  try {
+    console.log(11);
 
-//     let user = await newUser.save()
-//     if (user) {
-//       res.json(user)
-//     } else {
-//       throw new Error("something Wrong")
-//     }
-//   } catch (error) {
-//     res.send(error.message)
-//   }
-// });
+    // if (!req.body.userName || !req.body.password || !req.body.firstName || !req.body.lastName || !req.body.email || !req.body.gender || !req.body.phones) {
+    //   throw new Error('You have an empty input.')
+    // };
+    console.log(12);
+
+    if (req.body.password.length < 8) {
+      throw new Error('password is too short.')
+    };
+    console.log(13);
+    req.body.password = await bcrypt.hash(req.body.password, saltRounds);
+    console.log(req.body.password);
+    const newUser = new User({
+     
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      userName: req.body.userName,
+      phones: req.body.phones,
+      email: req.body.email,
+      password: req.body.password,
+      gender: req.body.gender
+    });
+    console.log(newUser);
+    let user = await newUser.save();
+    console.log(14);
+
+    console.log(user);
+    console.log(15);
+
+    if (user) {
+      res.json({message: true})
+    } else {
+      throw new Error("something Wrong")
+    }
+  } catch (error) {
+    console.log(7007);
+    res.json({
+      message: error.message
+    })
+  }
+});
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////// POST TO SIGNIN USER  ////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
+
+router.post('/signIn', async function (req, res) {
+  try {
+    if (!req.body.userName || !req.body.password) {
+      throw new Error('You have an empty input.')
+    };
+    let user = await new Promise((resolve, reject) => {
+      User.findOne({
+        userName: req.body.userName
+      }, (err, data) => {
+        if (err) reject(err);
+        if (data) {
+          bcrypt.compare(req.body.password, data.password, function (err, result) {
+            if (result) {
+              resolve(data);
+            } else {
+              reject("your password is incorrect")
+            }
+          });
+        } else {
+          console.log("not found");
+        }
+      })
+    })
+    console.log(user);
+    if (user === null) {
+      res.render("pages/signIn", {})
+    }
+    if (user.role === "admin") {
+      res.redirect("admin")
+    } else if (user) {
+      res.redirect("dashboard")
+    }
+
+  } catch (error) {
+    console.log(error);
+    res.render("pages/signIn")
+  }
+})
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////

@@ -3,12 +3,6 @@ const Schema = mongoose.Schema;
 
 
 const UserSchema = new Schema({
-    userName: {
-        type: String,
-        unique: true,
-        required: true,
-        trim:true
-    },
     firstName: {
         type: String,
         required: true
@@ -17,17 +11,11 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    password:{
-        type:String,
-        required:true,
-        trim:true,
-        minlength:8
-    },
-    email:{
-        type:String,
-        required:true,
-        unique:true,  
-        trim:true,
+    userName: {
+        type: String,
+        unique: true,
+        required: true,
+        trim:true
     },
     phones:{
         type:String,
@@ -35,14 +23,28 @@ const UserSchema = new Schema({
         unique:true,  
         trim:true,
     },
-    avatar:{
+    email:{
         type:String,
-        default:'default.jpg'
+        required:true,
+        unique:true,  
+        trim:true,
     },
+    password:{
+        type:String,
+        required:true,
+        trim:true,
+        minlength:8
+    },
+
     gender:{
         type:String,
         enum:['male','female']
     },
+    avatar:{
+        type:String,
+        default:'default.jpg'
+    },
+
     role:{
         type:String,
         enum:['user','admin']

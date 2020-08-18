@@ -36,19 +36,14 @@ router.get("/signIn", (req, res) => {
 
 
 router.post('/signUp', async function (req, res) {
-  console.log(req.body );
   try {
-    console.log(11);
-
     if (!req.body.userName || !req.body.password || !req.body.firstName || !req.body.lastName || !req.body.email || !req.body.gender || !req.body.phones) {
       throw new Error('You have an empty input.')
     };
-    console.log(12);
 
     if (req.body.password.length < 8) {
       throw new Error('password is too short.')
     };
-    console.log(13);
     req.body.password = await bcrypt.hash(req.body.password, saltRounds);
     console.log(req.body.password);
     const newUser = new User({
@@ -61,16 +56,9 @@ router.post('/signUp', async function (req, res) {
       password: req.body.password,
       gender: req.body.gender
     });
-    console.log(newUser);
     let user = await newUser.save();
-    newUser.save((error,newUser) =>{
-      console.log(newUser,"67");  
-    })
-    console.log(14);
 
-    console.log(user);
-    console.log(15);
-
+  
     if (user) {
       res.json({message: true})
     } else {
@@ -89,15 +77,24 @@ router.post('/signUp', async function (req, res) {
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 router.post('/signIn', async function (req, res) {
+  console.log(11);
+  console.log(req.body);
   try {
-    if (!req.body.userName || !req.body.password) {
-      throw new Error('You have an empty input.')
-    };
+ 
+    // if (!req.body.userName || !req.body.password) {
+    //   throw new Error('You have an empty input.')
+    // };
+    console.log(12);
+
     let user = await new Promise((resolve, reject) => {
       User.findOne({
+
         userName: req.body.userName
       }, (err, data) => {
+        console.log('93',data);
+
         if (err) reject(err);
+
         if (data) {
           bcrypt.compare(req.body.password, data.password, function (err, result) {
             if (result) {
@@ -125,6 +122,15 @@ router.post('/signIn', async function (req, res) {
     console.log(error);
     res.render("pages/signIn")
   }
+})
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////  GET SIGNIN PAGE    ///////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+router.get("/dashboard", (req, res) => {
+  res.render("pages/dashboard")
 })
 
 

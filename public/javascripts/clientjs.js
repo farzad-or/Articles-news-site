@@ -1,5 +1,8 @@
-$("#btn-signup").click(function () {
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////// FUNC TO SIGNUP   ////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
 
+$("#btn-signup").click(function () {
     let users = {
         'firstName': $('#signup-firstname').val(),
         'lastName': $('#signup-lastname').val(),
@@ -9,8 +12,6 @@ $("#btn-signup").click(function () {
         'password': $('#signup-password').val(),
         'gender': $('#sex').val()
     }
-    // console.log($('#signup-username').val());
-    // console.log(users);
 
     $.ajax({
         type: "POST",
@@ -27,3 +28,30 @@ $("#btn-signup").click(function () {
         }
     });
 })
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////// FUNC TO SIGNIN   ////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+$("#btn-signIn").click(function () {
+    console.log(1000);
+    let user = {
+        'userName': $('#signin-username').val(),
+        'password': $('#signin-password').val()
+    }
+    console.log(1001);
+    console.log(user);
+
+    $.ajax({
+        type: "POST",
+        url: "/api/signIn",
+        data: user,
+        dataType: 'json',
+        success: function (res) {
+        console.log(res);
+        }
+    });
+})
+

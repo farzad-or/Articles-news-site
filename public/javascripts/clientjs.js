@@ -24,8 +24,6 @@ $("#btn-signup").click(function () {
             } else {
                 console.log(res.message);
             }
-
-
         }
     });
 })

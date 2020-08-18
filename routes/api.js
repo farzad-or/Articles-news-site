@@ -40,9 +40,9 @@ router.post('/signUp', async function (req, res) {
   try {
     console.log(11);
 
-    // if (!req.body.userName || !req.body.password || !req.body.firstName || !req.body.lastName || !req.body.email || !req.body.gender || !req.body.phones) {
-    //   throw new Error('You have an empty input.')
-    // };
+    if (!req.body.userName || !req.body.password || !req.body.firstName || !req.body.lastName || !req.body.email || !req.body.gender || !req.body.phones) {
+      throw new Error('You have an empty input.')
+    };
     console.log(12);
 
     if (req.body.password.length < 8) {
@@ -63,6 +63,9 @@ router.post('/signUp', async function (req, res) {
     });
     console.log(newUser);
     let user = await newUser.save();
+    newUser.save((error,newUser) =>{
+      console.log(newUser,"67");  
+    })
     console.log(14);
 
     console.log(user);

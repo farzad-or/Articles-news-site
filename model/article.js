@@ -1,53 +1,51 @@
-const mogoose=require('mongoose');
+const mogoose = require('mongoose');
 
-const Schema=mogoose.Schema;
-const ArticleSchema= new Schema({
-    title:{
-        type:String,
+const Schema = mogoose.Schema;
+const ArticleSchema = new Schema({
+    title: {
+        type: String,
         required: true,
         trim: true,
         maxlength: 300,
         minlength: 3
     },
-    description:{
-        type:String,
-        required:true,
-        trim:true,
-        // minlength:150,
-        // maxlength:700,
+    description: {
+        type: String,
+        required: true,
+        trim: true,
+
     },
-    content:{
-        type:String,
-        required:true,
-        trim:true,
-        // minlength:300,
+    content: {
+        type: String,
+        required: true,
+        trim: true,
     },
     createdAt: {
         type: Date,
         required: true,
         default: Date.now
     },
-    articleImage:{
-        type:String,
-        required:true,
+    articleImage: {
+        type: String,
+        required: true,
     },
-    views:{
-        type:Number,
-        required:true,
-        default:0
+    views: {
+        type: Number,
+        required: true,
+        default: 0
     },
-    author:{
+    author: {
         type: Schema.Types.ObjectId,
         ref: "User",
         required: true
     },
-    publish:{
+    publish: {
         type: Boolean,
         required: true,
-        default:false
+        default: false
     }
 
 
 })
 
-module.exports=mogoose.model("Article", ArticleSchema)
+module.exports = mogoose.model("Article", ArticleSchema)

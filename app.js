@@ -18,18 +18,18 @@ const app = express();
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 app.use(session({
-	key:"user_sid",
-	secret:"somerandomstuff",
+	key: "user_sid",
+	secret: "somerandomstuff",
 	resave: false,
 	saveUninitialized: false,
-    cookie: {
+	cookie: {
 		expires: 600000,
-    }
+	}
 }));
 
 app.use(cookieParser());
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
 	if (req.cookies.user_sid && !req.session.user) {
 		res.clearCookie("user_sid");
 	};
@@ -67,7 +67,9 @@ mongoose.connect('mongodb://localhost:27017/article-bloger-comments', {
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+	extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

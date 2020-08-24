@@ -1,4 +1,5 @@
-const User = require("../models/user");
+const User = require("../model/user");
+
 
 const initialization = async function()  {
     try {
@@ -9,13 +10,13 @@ const initialization = async function()  {
         
         const ADMIN = new User({
 
-            userName:  "farzad",
-            firstName: "farzad",
-            lastName:"ordikhani",
-            password:"66009096",
-            email:"farzad.ordikhani@gmail.com",
-            phones:"09384556161",
-            gender:"male",
+            userName:  'farzad',
+            firstName: 'farzad',
+            lastName:'ordikhani',
+            password:'66009096',
+            email:'farzad.ordikhani@gmail.com',
+            phones:'09384556161',
+            gender:'male',
             role: 'admin'
          
         });
@@ -27,3 +28,5 @@ const initialization = async function()  {
         console.log('Error in initialization function', err);
     };
 };
+
+module.exports = initialization;

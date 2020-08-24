@@ -4,11 +4,38 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-
 const apiRouter = require('./routes/api');
+const session = require('express-session')
+require("./tools/initialization")();
+
 
 
 const app = express();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////setting up session////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+app.use(session({
+	key: "user_sid",
+	secret: "somerandomstuff",
+	resave: false,
+	saveUninitialized: false,
+	cookie: {
+		expires: 600000,
+	}
+}));
+
+app.use(cookieParser());
+
+app.use(function (req, res, next) {
+	if (req.cookies.user_sid && !req.session.user) {
+		res.clearCookie("user_sid");
+	};
+
+	next();
+});
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////view engine setup/////////////////////////////////////
@@ -40,7 +67,9 @@ mongoose.connect('mongodb://localhost:27017/article-bloger-comments', {
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+	extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -47,7 +47,7 @@ router.post('/signUp', async function (req, res) {
     req.body.password = await bcrypt.hash(req.body.password, saltRounds);
     console.log(req.body.password);
     const newUser = new User({
-     
+
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       userName: req.body.userName,
@@ -58,9 +58,11 @@ router.post('/signUp', async function (req, res) {
     });
     let user = await newUser.save();
 
-  
+
     if (user) {
-      res.json({message: true})
+      res.json({
+        message: true
+      })
     } else {
       throw new Error("something Wrong")
     }
@@ -80,21 +82,18 @@ router.post('/signIn', async function (req, res) {
   console.log(11);
   console.log(req.body);
   try {
- 
-    // if (!req.body.userName || !req.body.password) {
-    //   throw new Error('You have an empty input.')
-    // };
-    console.log(12);
+    // check empty fields
+    if (!req.body.userName || !req.body.password) {
+      throw new Error('You have an empty input.')
+    };
 
     let user = await new Promise((resolve, reject) => {
       User.findOne({
 
         userName: req.body.userName
+
       }, (err, data) => {
-        console.log('93',data);
-
         if (err) reject(err);
-
         if (data) {
           bcrypt.compare(req.body.password, data.password, function (err, result) {
             if (result) {
@@ -110,12 +109,16 @@ router.post('/signIn', async function (req, res) {
     })
     console.log(user);
     if (user === null) {
-      res.render("pages/signIn", {})
+      res.render("pages/signIn")
     }
     if (user.role === "admin") {
       res.redirect("admin")
     } else if (user) {
+
+      req.session.user = user;
+
       res.redirect("dashboard")
+
     }
 
   } catch (error) {
@@ -133,6 +136,24 @@ router.get("/dashboard", (req, res) => {
   res.render("pages/dashboard")
 })
 
+router.get("/blog", (req, res) => {
+  res.render("pages/blog")
+})
+router.get("/chat", (req, res) => {
+  res.render("pages/chat")
+})
+router.get("/dashboard", (req, res) => {
+  res.render("pages/dashboard")
+})
+router.get("/forgot-password", (req, res) => {
+  res.render("pages/forgot-password")
+})
+router.get("/post", (req, res) => {
+  res.render("pages/post")
+})
+router.get("/profile", (req, res) => {
+  res.render("pages/profile")
+})
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////

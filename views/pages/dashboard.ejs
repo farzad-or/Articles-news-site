@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-<title>:: ام پی لایف :: مشخصات</title>
+<title>:: ام پی لایف :: جزئیات بلاگ</title>
 <%- include('../partials/header') -%>
 
 </head>
@@ -13,7 +13,7 @@
 <div class="page-loader-wrapper">
     <div class="loader">
         <div class="m-t-30"><img src="/template/assets/images/thumbnail.png" width="48" height="48" alt="Mplify"></div>
-        <p>لطفا صبر کنید...</p>        
+        <p>لطفا صبر کنید...</p>
     </div>
 </div>
 <!-- Overlay For Sidebars -->
@@ -22,366 +22,175 @@
 <div id="wrapper">
 
     <nav class="navbar navbar-fixed-top">
-        <%- include('../partials/navbar.ejs') -%>
+        <%- include('../partials/navbar') -%>
 
     </nav>
 
-    <div id="leftslidebar" class="sidebar">
-
-        <%- include('../partials/leftslidebar.ejs') -%>
+    <div id="leftsidebar" class="sidebar">
+        <%- include('../partials/leftslidebar') -%>
 
     </div>
 
-    <div id="mega_menubar" class="mega_menubar">
-        <div class="container">
-            <div class="row clearfix">
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>اشتراک در</h2>
-                        </div>
-                        <div class="body">
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" value="" placeholder="وارد کردن نام" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" value="" placeholder="وارد کردن ایمیل" class="form-control">
-                                </div>
-                                <button class="btn btn-primary">اشتراک</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>آکاردئون</h2>
-                        </div>
-                        <div class="body">
-                            <ul class="accordion2">
-                                <li class="accordion-item is-active">
-                                    <h3 class="accordion-thumb"><span>قالب حرفه ای</span></h3>
-                                    <p class="accordion-panel">
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                                    </p>
-                                </li>
-                                
-                                <li class="accordion-item">
-                                    <h3 class="accordion-thumb"><span>منحصر به فرد</span></h3>
-                                    <p class="accordion-panel">
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                                    </p>
-                                </li>
-                            </ul>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>کمپانی</h2>
-                        </div>
-                        <div class="body">
-                            <ul class="list-unstyled links">
-                                <li><a href="javascript:void(0);" title="" >آمار ما</a></li>
-                                <li><a href="javascript:void(0);" title="" >محرمانه بودن</a></li>                                
-                                <li><a href="javascript:void(0);" title="" >درباره ما</a></li>
-                                <li><a href="javascript:void(0);" title="" >مشتریان</a></li>
-                                <li><a href="javascript:void(0);" title="" >تماس با ما</a></li>                                
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>گالری</h2>
-                        </div>
-                        <div class="body">
-                            <div class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="carousel-item active">
-                                        <img src="/template/assets/images/image-gallery/1.jpg" class="img-fluid" alt="img" />
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="/template/assets/images/image-gallery/2.jpg" class="img-fluid" alt="img" />
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="/template/assets/images/image-gallery/3.jpg" class="img-fluid" alt="img" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     
-
+   
 
     <div id="main-content">
         <div class="container-fluid">
             <div class="block-header">
-                <div class="row">
-                    <div class="col-lg-5 col-md-8 col-sm-12">                        
-                        <h2>مشخصات کاربر v2</h2>
-                    </div>            
-                  
-                </div>
+           
             </div>
 
             <div class="row clearfix">
-
-                <div class="col-lg-4 col-md-12">
-                    <div class="card profile-header">
+                <div class="col-lg-8 col-md-12 left-box">
+                    <div class="card single_post">
                         <div class="body">
-                            <div class="profile-image"> <img src="/template/assets/images/user.png" class="rounded-circle" alt=""> </div>
-                            <div>
-                                <h4 class="m-b-0"><strong>ساموئل</strong> موریس</h4>
-                                <span>واشنگتن, d.c.</span>
-                                <p class="font-14 m-b-0 m-t-10">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. </p>
+                            <div class="blog-top d-flex clearfix">
+                                <div class="short-name">
+                                    <span>JA</span>
+                                </div>
+                                <h4 class="name">jafar abbasi</h4>
+                                <h5 class="time">2h</h5>
                             </div>
-                            <div class="m-t-15">
-                                <button class="btn btn-outline-secondary"><i class="fa fa-envelope"></i> پیام</button>
+                            <h3><a href="blog-details.html">تمامی کار را انجام داده.</a></h3>
+                            <div class="img-post">
+                                <img class="d-block img-fluid" src="/template/assets/images/blog/blog-page-1.jpg" alt="First slide">
                             </div>
-                            <div class="border-top p-t-20 m-t-20 text-left">
-                                <ul class="list-unstyled profile-social">
-                                    <li><a class="text-col-dark" href="javascript:void(0);"><i class="fa fa-facebook"></i> فیس بوک</a></li>
-                                    <li><a href="javascript:void(0);"><i class="fa fa-instagram"></i> اینستاگرام</a></li>
-                                    <li><a href="javascript:void(0);"><i class="fa fa-twitter"></i> توییتر</a></li>
-                                    <li><a href="javascript:void(0);"><i class="fa fa-linkedin"></i> لینکدین</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد </p>
+                        </div>                        
                     </div>
-
                     <div class="card">
-                        <div class="header">
-                            <h2>اطلاعات</h2>
-                            <ul class="header-dropdown">
-                                <li> <a href="javascript:void(0);" data-toggle="cardloading" data-loading-effect="pulse"><i class="icon-refresh"></i></a></li>
-                                <li><a href="javascript:void(0);" class="full-screen"><i class="icon-size-fullscreen"></i></a></li>
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
-                                    <ul class="dropdown-menu dropdown-menu-right animated bounceIn">
-                                        <li><a href="javascript:void(0);">عمل</a></li>
-                                        <li><a href="javascript:void(0);">دیگر عمل</a></li>
-                                        <li><a href="javascript:void(0);">و دیگر افدامات</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <small class="text-muted">آدرس: </small>
-                            <p>تهران / کرج /خیابان شهید آوینی پلاک 17</p>
-                            <div>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1923731.7533500232!2d-120.39098936853455!3d37.63767091877441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1522391841133" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <div class="header">
+                                <h2>نظر 3</h2>
                             </div>
-                            <hr>
-                            <small class="text-muted">آدرس ایمیل: </small>
-                            <p>michael@gmail.com</p>                            
-                            <hr>
-                            <small class="text-muted">موبایل: </small>
-                            <p>+ 202-555-2828</p>
-                            <hr>
-                            <small class="text-muted">تاریخ تولد: </small>
-                            <p class="m-b-0">10 دی 1397</p>
+                            <div class="body">
+                                <ul class="comment-reply list-unstyled">
+                                    <li class="row clearfix">
+                                        <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="/template/assets/images/sm/avatar2.jpg" alt="Awesome Image"></div>
+                                        <div class="text-box col-md-10 col-8 p-l-0 p-r0">
+                                            <h5 class="m-b-0">جی جی هادید </h5>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.  </p>
+                                            <ul class="list-inline">
+                                                <li><a href="javascript:void(0);">10 دی 1397</a></li>
+                                                <li><a href="javascript:void(0);">پاسخ</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="row clearfix">
+                                        <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="/template/assets/images/sm/avatar3.jpg" alt="Awesome Image"></div>
+                                        <div class="text-box col-md-10 col-8 p-l-0 p-r0">
+                                            <h5 class="m-b-0">جعفر عباسی</h5>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+                                            <ul class="list-inline">
+                                                <li><a href="javascript:void(0);">10 دی 1397</a></li>
+                                                <li><a href="javascript:void(0);">پاسخ</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="row clearfix">
+                                        <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="/template/assets/images/sm/avatar4.jpg" alt="Awesome Image"></div>
+                                        <div class="text-box col-md-10 col-8 p-l-0 p-r0">
+                                            <h5 class="m-b-0">مجتبی شاهی</h5>
+                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+                                            <ul class="list-inline">
+                                                <li><a href="javascript:void(0);">10 دی 1397</a></li>
+                                                <li><a href="javascript:void(0);">پاسخ</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>                                        
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="header">
+                                <h2>پاسخ دهید <small>آدرس ایمیل شما منتشر نخواهد شد. فیلدهای اجباری مشخص شده اند*</small></h2>
+                            </div>
+                            <div class="body">
+                                <div class="comment-form">
+                                    <form class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="نام شما">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="آدرس ایمیل">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <textarea rows="4" class="form-control no-resize" placeholder="لطفا اینجا تایپ بفرمایید"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-block btn-primary">ارسال</button>
+                                        </div>                                
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-lg-4 col-md-12 right-box">
+                    <div class="card">
+                        <div class="body search">
+                            <div class="input-group m-b-0">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="icon-magnifier"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="جستجو...">                                    
+                            </div>
                         </div>
                     </div>
                     
-                </div>
-
-                <div class="col-lg-5 col-md-12">
-
-                    <div class="card">
-                        <div class="body">
-                            <ul class="nav nav-tabs-new">
-                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Overview">نمای کلی</a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Settings">تنظیمات</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="tab-content padding-0">
-
-                        <div class="tab-pane active" id="Overview">
-                            <div class="card">
-                                <div class="body">
-                                    <div class="new_post">
-                                        <div class="form-group">
-                                            <textarea rows="4" class="form-control no-resize" placeholder="لطفا آنچه را که میخواهید تایپ کنید..."></textarea>
-                                        </div>
-                                        <div class="post-toolbar-b">
-                                            <button class="btn btn-warning"><i class="icon-link"></i></button>
-                                            <button class="btn btn-warning"><i class="icon-camera"></i></button>
-                                            <button class="btn btn-primary">پست</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card single_post">
-                                <div class="body">
-                                    <div class="blog-top d-flex clearfix">
-                                        <div class="short-name">
-                                            <span>JA</span>
-                                        </div>
-                                        <h4 class="name">jafar abbasi</h4>
-                                        <h5 class="time">2h</h5>
-                                    </div>
-                                    <h3><a href="blog-details.html">تمام عکس ها دقیق هستند</a></h3>
-                                    <div class="img-post">
-                                        <img class="d-block img-fluid" src="template/assets/images/blog/blog-page-1.jpg" alt="First slide">
-                                    </div>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                                </div>
-                                <div class="footer">
-                                    <div class="actions">
-                                        <a href="javascript:void(0);" class="btn btn-outline-secondary">ادامه خواندن</a>
-                                    </div>
-                                    <ul class="stats">
-                                        <li><a href="javascript:void(0);">عمومی</a></li>
-                                        <li><a href="javascript:void(0);" class="icon-heart">28</a></li>
-                                        <li><a href="javascript:void(0);" class="icon-bubbles">128</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card single_post">
-                                <div class="body">
-                                    <div class="blog-top d-flex clearfix">
-                                        <div class="short-name">
-                                            <span>JA</span>
-                                        </div>
-                                        <h4 class="name">jafar abbasi</h4>
-                                        <h5 class="time">2h</h5>
-                                    </div>
-                                    <h3><a href="blog-details.html">تمام عکس ها دقیق هستند</a></h3>
-                                    <div class="img-post">
-                                        <img class="d-block img-fluid" src="/template/assets/images/blog/blog-page-2.jpg" alt="">
-                                    </div>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                                </div>
-                                <div class="footer">
-                                    <div class="actions">
-                                        <a href="javascript:void(0);" class="btn btn-outline-secondary">ادامه خواندن</a>
-                                    </div>
-                                    <ul class="stats">
-                                        <li><a href="javascript:void(0);">عمومی</a></li>
-                                        <li><a href="javascript:void(0);" class="icon-heart">28</a></li>
-                                        <li><a href="javascript:void(0);" class="icon-bubbles">128</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane" id="Settings">
-
-                            <div class="card">
-                                <div class="body">
-                                    <h6>اطلاعات اولیه</h6>
-                                    <div class="row clearfix">
-                                        <div class="col-lg-12 col-md-12">
-                                            <div class="form-group">                                                
-                                                <input type="text" class="form-control" placeholder="نام">
-                                            </div>
-                                            <div class="form-group">                                                
-                                                <input type="text" class="form-control" placeholder="نام خانوادگی">
-                                            </div>
-                                            <div class="form-group">
-                                                <div>
-                                                    <label class="fancy-radio">
-                                                        <input name="gender2" value="male" type="radio" checked>
-                                                        <span><i></i>زن</span>
-                                                    </label>
-                                                    <label class="fancy-radio">
-                                                        <input name="gender2" value="female" type="radio">
-                                                        <span><i></i>مرد</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="icon-calendar"></i></span>
-                                                    </div>
-                                                    <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder="Birthdate">
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                      
-                                    </div>
-                                    <button type="button" class="btn btn-primary">بروز رسانی</button> &nbsp;&nbsp;
-                                    <button type="button" class="btn btn-default">لفو</button>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="body">
-                                    <div class="row clearfix">
-                                        <div class="col-lg-12 col-md-12">
-                                            <h6>اطلاعات حساب</h6>
-                                            <div class="form-group">                                                
-                                                <input type="text" class="form-control" value="samuelmorris" disabled placeholder="نام کاربری">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="email" class="form-control" value="samuelmorris.info@yourdomain.com" placeholder="ایمیل">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="شماره تلفن">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-12 col-md-12">
-                                            <h6>تعییر رمز عبور</h6>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control" placeholder="رمز عبور فعلی">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control" placeholder="رمز عبور جدید">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control" placeholder="تایید رمز عبور جدید">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="btn btn-primary">بروز رسانی</button> &nbsp;&nbsp;
-                                    <button class="btn btn-default">لغو</button>
-                                </div>
-                            </div>
-
-                         
-                        </div>
-
-                    </div>
-                    
-                </div>
-
-                <div class="col-lg-3 col-md-12">
-               
                     <div class="card">
                         <div class="header">
-                            <h2>آمار من</h2>
+                            <h2>پست های محبوب</h2>                        
                         </div>
-                        <div class="body">
-                            <ul class=" list-unstyled basic-list">
-                                <li><i class="icon-book-open m-r-5"></i> پروژه های فعال <span class="badge badge-primary">21</span></li>
-                                <li><i class="icon-list m-r-5"></i> وظیفه در انتظار <span class="badge-purple badge">50</span></li>
-                                <li><i class="icon-screen-tablet m-r-5"></i> بلیط های پشتیبانی<span class="badge-success badge">9</span></li>
-                                <li><i class="icon-tag m-r-5"></i> پروژه های جدید<span class="badge-info badge">7</span></li>
-                            </ul>
+                        <div class="body widget popular-post">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="single_post border-bottom mb-4">
+                                        <div class="blog-top d-flex clearfix">
+                                            <div class="short-name">
+                                                <span>JA</span>
+                                            </div>
+                                            <h4 class="name">jafar abbasi</h4>
+                                            <h5 class="time">2h</h5>
+                                        </div>
+                                        <p class="font-weight-bold mb-0">پشتیبانی تمامی قالب ها</p>
+                                        <span class="mb-2 d-block">10 دی 1397</span>
+                                        <div class="img-post">
+                                            <img src="template/assets/images/blog/blog-page-2.jpg" alt="Awesome Image">                                        
+                                        </div>                                            
+                                    </div>
+                                    <div class="single_post">
+                                        <div class="blog-top d-flex clearfix">
+                                            <div class="short-name">
+                                                <span>JA</span>
+                                            </div>
+                                            <h4 class="name">jafar abbasi</h4>
+                                            <h5 class="time">2h</h5>
+                                        </div>
+                                        <p class="font-weight-bold mb-0">طراح قالب</p>
+                                        <span class="mb-2 d-block">10 دی 1397</span>
+                                        <div class="img-post">
+                                            <img src="/template/assets/images/blog/blog-page-2.jpg" alt="Awesome Image">                                        
+                                        </div>                                            
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                
                 </div>
             </div>
+
         </div>
     </div>
-
+    
 </div>
 
 <!-- Javascript -->
-<%- include('../partials/scripts.ejs') -%>
+<%- include('../partials/scripts') -%>
+
 </body>
 </html>

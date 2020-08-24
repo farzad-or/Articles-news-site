@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<title>:: ام پی لایف :: لیست تماس</title>
+<%- include('../partials/header') -%>
+
+</head>
+<body class="theme-blue rtl">
+
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="m-t-30"><img src="/template/assets/images/thumbnail.png" width="48" height="48" alt="Mplify"></div>
+        <p>لطفا صبر کنید...</p>        
+    </div>
+</div>
+<!-- Overlay For Sidebars -->
+<div class="overlay" style="display: none;"></div>
+
+<div id="wrapper">
+
+    <nav class="navbar navbar-fixed-top">
+        <%- include('../partials/navbar') -%>
+
+    </nav>
+
+    <div id="leftsidebar" class="sidebar">
+        <%- include('../partials/leftslidebar') -%>
+
+    </div>
+
+  
+
+    <div id="main-content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-5 col-md-8 col-sm-12">                        
+                        <h2>چت</h2>
+                    
+                </div>
+            </div>
+            
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="chat-app">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4">
+                                <div class="hidden-xs">
+                                    <div id="plist" class="people-list">
+                                        <div class="input-group p-3 bg-white border-bottom">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-magnifier"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="جستجو...">
+                                        </div>
+                                        <ul class="list-unstyled chat-list mt-2 mb-0">
+                                            <li class="clearfix">
+                                                <div class="float-left list-left">
+                                                    <div class="img-preview">
+                                                        <img src="/template/assets/images/xs/avatar1.jpg" alt="avatar" />
+                                                        <div class="status"><i class="fa fa-circle online"></i></div>
+                                                    </div>
+                                                    <div class="about">
+                                                        <div class="name">جعفر عباسی</div>
+                                                        <div class="msg"> خوب! عالیه </div>
+                                                    </div>
+                                                </div>
+                                                <div class="float-right">
+                                                    <div class="time">23 آذر</div>
+                                                    <div class="badge badge-danger bg-danger text-white">2</div>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix active">
+                                                <div class="float-left list-left">
+                                                    <div class="img-preview">
+                                                        <img src="/template/assets/images/xs/avatar2.jpg" alt="avatar" />
+                                                    </div>
+                                                    <div class="about">
+                                                        <div class="name">مجتبی شاهی</div>
+                                                        <div class="msg"> من امروز نیستم </div>
+                                                    </div>
+                                                </div>
+                                                <div class="float-right">
+                                                    <div class="time">24 آذر</div>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="float-left list-left">
+                                                    <div class="img-preview">
+                                                        <img src="/template/assets/images/xs/avatar4.jpg" alt="avatar" />
+                                                    </div>
+                                                    <div class="about">
+                                                        <div class="name">مایکل</div>
+                                                        <div class="msg"> امروز کسی هس؟ </div>
+                                                    </div>
+                                                </div>
+                                                <div class="float-right">
+                                                    <div class="time">24 آذر</div>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="float-left list-left">
+                                                    <div class="img-preview">
+                                                        <img src="/template/assets/images/xs/avatar5.jpg" alt="avatar" />
+                                                    </div>
+                                                    <div class="about">
+                                                        <div class="name">سزار آلبرتو</div>
+                                                        <div class="msg"> من یک پروژه دارم. </div>
+                                                    </div>
+                                                </div>
+                                                <div class="float-right">
+                                                    <div class="time">24 آذر</div>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="float-left list-left">
+                                                    <div class="img-preview">
+                                                        <img src="/template/assets/images/xs/avatar7.jpg" alt="avatar" />
+                                                    </div>
+                                                    <div class="about">
+                                                        <div class="name">آردص مایکل</div>
+                                                        <div class="msg"> منم امروز نیستم </div>
+                                                    </div>
+                                                </div>
+                                                <div class="float-right">
+                                                    <div class="time">24 آذر</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-md-8">
+                                <div id="chat-left" class="chat bg-white">
+                                    <div class="chat-header clearfix">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                                    <img src="/template/assets/images/xs/avatar2.jpg" alt="avatar" />
+                                                </a>
+                                                <div class="chat-about">
+                                                    <h6 class="m-b-0">جعفر</h6>
+                                                    <small>آخرین بار دیده شده: 2 ساعت قبل</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 hidden-sm text-right">
+                                                <a href="javascript:void(0);" class="btn btn-outline-secondary"><i class="icon-camera"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-outline-primary"><i class="icon-camcorder"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-outline-info"><i class="icon-settings"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-outline-warning"><i class="icon-question"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chat-history">
+                                        <ul class="m-b-0">
+                                            <li class="clearfix">
+                                                <div class="message-data">
+                                                    <img src="/template/assets/images/xs/avatar7.jpg" alt="avatar">                                                    
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="message other-message float-right">
+                                                        <span class="message-data-time d-block mt-1" >10:10</span>
+                                                        <p>سلام من جعفرم! مشکلی پیش آومده؟</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <div class="message-data float-left">
+                                                    <img src="/template/assets/images/xs/avatar7.jpg" alt="avatar">                                                    
+                                                </div>
+                                                <div class="detail-right">
+                                                    <div class="message my-message">
+                                                        <span class="message-data-time d-block mt-1" >10:12</span>
+                                                        <p>ما امروز هستیم!</p>
+                                                    </div>
+                                                    <div class="message my-message">
+                                                        <span class="message-data-time d-block mt-1" >10:13</span>
+                                                        <p>ما امروز اکثر پروژه ها را تکمیل میکنیم.</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="chat-message clearfix">
+                                        <div class="input-group mb-0">
+                                            <input type="text" class="form-control" placeholder="اینجا تایپ کنید...">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="icon-paper-plane"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<!-- Default Size -->
+<div class="modal fade" id="view_info" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="title" id="defaultModalLabel">اطلاعات کاربر</h6>
+            </div>
+            <div class="modal-body">
+                <div class="body top_counter">
+                    <div class="icon">
+                        <img src="/template/assets/images/xs/avatar2.jpg" class="rounded-circle" alt="">
+                    </div>
+                    <div class="content m-t-5">
+                        <div>سرگروه</div>
+                        <h6>مایکل</h6>
+                    </div>
+                </div>
+                <hr>                
+                <small class="text-muted">آدرس: </small>
+                <p>ایران/ ارومیه</p>
+                <small class="text-muted">آدرس ایمیل: </small>
+                <p>michael@gmail.com</p>
+                <small class="text-muted">موبایل: </small>
+                <p>+ 202-555-2828</p>
+                <small class="text-muted">تاریخ تولد: </small>
+                <p class="m-b-0">1377</p>                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">بستن</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Javascript -->
+<%- include('../partials/scripts') -%>
+
+</body>
+</html>

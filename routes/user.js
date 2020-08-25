@@ -53,13 +53,16 @@ router.get("/dashboard", async (req, res) => {
 
   try {
       //get message
-      const MESSAGES= await Message.find({receiver : req.session.user._id})
-      .populate('sender').sort({createdAt:-1}); 
-console.log(req.session.user);
+    //   const MESSAGES= await Message.find({receiver : req.session.user._id})
+    //   .populate('sender').sort({createdAt:-1}); 
+    
+
+
+
       return res.render("pages/dashboard", {
           user: req.session.user,
           jalali: jalali,
-           messages: MESSAGES
+        //    messages: MESSAGES
           // allArticleCount : ALL_ARTICLES_COUNT,
           // publishedArticles :PUBLISH_ARTCLES,
           // totalViews : totalViews,
@@ -85,7 +88,7 @@ router.get("/profile", (req, res) => {
     //get message
     // const MESSAGES= await Message.find({receiver : req.session.user._id})
     // .populate('sender').sort({createdAt:-1}); 
-console.log(req.session.user);
+
     return res.render("pages/profile", {
         user: req.session.user,
         jalali: jalali
@@ -108,10 +111,6 @@ console.log(req.session.user);
 
 
 
-router.post('/uploadAvatar', (req, res) => {
-
-
-})
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -122,5 +121,56 @@ router.post('/uploadAvatar', (req, res) => {
 router.put('/update', async (req, res) => {
    
 })
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////       UPDATE USER INFO   ///////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////
+//               ADD AVATAR                 //
+/////////////////////////////////////////////
+
+router.post('/uploadAvatar', (req, res) => {
+console.log(3232);
+  const upload = uploadAvatar.single('avatar');
+  upload(req, res, async err => {
+     
+      if (err instanceof multer.MulterError) {
+          // A Multer error occurred when uploading.
+          return res.status(500).send(err)
+      } else if (err) {
+          // An unknown error occurred when uploading.
+          return res.status(500).send(err)
+      }
+      try {
+        console.log(req.body);
+        console.log(req.file);
+          //update user avatar and get oldUser for delete old avatar file
+          const LAST_USER = await User.findByIdAndUpdate(req.session.user._id, {
+              avatar: req.file.filename
+          })
+
+          //delete old avatar file (if exist)
+          if (req.session.user.avatar && fs.existsSync('public/images/avatar/' + LAST_USER.avatar)) {
+              fs.unlinkSync('public/images/avatar/' + LAST_USER.avatar)
+          }
+          //update session.user.avatar
+          req.session.user.avatar = req.file.filename;
+          return res.json({
+              message: "تصویر پروفایل با موفقیت تغییر کرد",
+              color: 'alert-success',
+              avatar: req.file.filename
+
+          })
+      } catch (err) {
+          return res.json({
+              message: "تصویر بارگذاری نشد",
+              color: 'alert-danger'
+          })
+      }
+  })
+})
+
+
 
 module.exports = router;

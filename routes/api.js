@@ -87,7 +87,7 @@ router.get("/signUp", (req, res) => {
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 
-router.get("/signIn", (req, res) => {
+router.get("/signIn",isLogin, (req, res) => {
   res.render("pages/signIn")
 })
 
@@ -108,7 +108,6 @@ router.post('/signUp', async function (req, res) {
     req.body.password = await bcrypt.hash(req.body.password, saltRounds);
     console.log(req.body.password);
     const newUser = new User({
-
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       userName: req.body.userName,
@@ -140,8 +139,7 @@ router.post('/signUp', async function (req, res) {
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 router.post('/signIn', async function (req, res) {
-  console.log(11);
-  console.log(req.body);
+
   try {
     // check empty fields
     if (!req.body.userName || !req.body.password) {
@@ -168,17 +166,18 @@ router.post('/signIn', async function (req, res) {
         }
       })
     })
-    console.log(user);
+    
     if (user === null) {
       res.render("pages/signIn")
     }
     if (user.role === "admin") {
       res.redirect("admin")
     } else if (user) {
-      console.log(req.session.user);
+      
       req.session.user = user;
-
-      res.redirect("dashboard")
+      return res.json({
+        state: 'true'
+    })
 
     }
 

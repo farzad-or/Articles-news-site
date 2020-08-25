@@ -1,193 +1,235 @@
-
 <!doctype html>
 <html lang="en">
 
 <head>
-<title>:: ام پی لایف :: مشخصات</title>
-<%- include('../partials/header') -%>
+    <title>:: ام پی لایف :: مشخصات</title>
+    <%- include('../partials/header') -%>
 </head>
+
 <body class="theme-blue rtl">
 
-<!-- Page Loader -->
-<div class="page-loader-wrapper">
-    <div class="loader">
-        <div class="m-t-30"><img src="/template/assets/images/thumbnail.png" width="48" height="48" alt="Mplify"></div>
-        <p>لطفا صبر کنید...</p>        
-    </div>
-</div>
-<!-- Overlay For Sidebars -->
-<div class="overlay" style="display: none;"></div>
-
-<div id="wrapper">
-
-    <nav class="navbar navbar-fixed-top">
-        <%- include('../partials/navbar') -%>
-
-    </nav>
-
-    <div id="leftsidebar" class="sidebar">
-        <%- include('../partials/leftslidebar') -%>
-
-    </div>
-
-    
-   
-
-    <div id="main-content">
-        <div class="container-fluid">
-            <div class="block-header">
-               
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30"><img src="/template/assets/images/thumbnail.png" width="48" height="48" alt="Mplify">
             </div>
+            <p>لطفا صبر کنید...</p>
+        </div>
+    </div>
+    <!-- Overlay For Sidebars -->
+    <div class="overlay" style="display: none;"></div>
 
-            <div class="row clearfix">
+    <div id="wrapper">
 
-                <div class="col-lg-4 col-md-12">
-                    <div class="card profile-header">
-                        <div class="body">
-                            <div class="profile-image"> <img src="/template/assets/images/user.png" class="rounded-circle" alt=""> </div>
-                            <div>
-                                <h4 class="m-b-0"><strong><%= user.firstName %></strong> موریس</h4>
-                                <span>واشنگتن, d.c.</span>
-                                <p class="font-14 m-b-0 m-t-10">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. </p>
-                            </div>
-                            <div class="m-t-15">
-                                <button class="btn btn-outline-secondary"><i class="fa fa-envelope"></i> پیام</button>
-                            </div>
-                     
-                        </div>
-                    </div>
+        <nav class="navbar navbar-fixed-top">
+            <%- include('../partials/navbar') -%>
 
-            
-                    
+        </nav>
+
+        <div id="leftsidebar" class="sidebar">
+            <%- include('../partials/leftslidebar') -%>
+
+        </div>
+
+
+
+
+        <div id="main-content">
+            <div class="container-fluid">
+                <div class="block-header">
+
                 </div>
 
-                <div class="col-lg-5 col-md-12">
+                <div class="row clearfix">
 
-                    <div class="card">
-                        <div class="body">
-                            <ul class="nav nav-tabs-new">
-                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Overview">نمای کلی</a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Settings">تنظیمات</a></li>
-                            </ul>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card profile-header">
+                            <div class="body">
+                                <div class="profile-image"> <img src="/images/default.jpg" id="avatarImage"
+                                        class="rounded-circle" alt=""> </div>
+                                <div>
+                                    <h4 class="m-b-0"><strong><%= user.firstName %> <%= user.lastName %></strong> </h4>
+                                    <!-- <p class="font-14 m-b-0 m-t-10">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. </p> -->
+                                </div>
+                                <div class="input-group">
+                                        
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="field-file">
+                                            <label class="custom-file-label" >انتخاب فایل</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="button" id="saveAvatar">ارسال</button>
+                                        </div>
+                                </div>
+
+                            </div>
                         </div>
+
+
+
                     </div>
 
-                    <div class="tab-content padding-0">
+                    <div class="col-lg-5 col-md-12">
 
-                        <div class="tab-pane active" id="Overview">
-                            <div class="card">
-                                <div class="body">
-                                    <div class="new_post">
-                                        <div class="form-group">
-                                            <textarea rows="4" class="form-control no-resize" placeholder="لطفا آنچه را که میخواهید تایپ کنید..."></textarea>
-                                        </div>
-                                        <div class="post-toolbar-b">
-                                            <button class="btn btn-warning"><i class="icon-link"></i></button>
-                                            <button class="btn btn-warning"><i class="icon-camera"></i></button>
-                                            <button class="btn btn-primary">پست</button>
+                        <div class="card">
+                            <div class="body">
+                                <ul class="nav nav-tabs-new">
+                                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Overview">
+                                            اطلاعات کاربردی</a></li>
+                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Settings">
+                                            ویرایش</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tab-content padding-0">
+
+                            <div class="tab-pane active" id="Overview">
+                                <div class="card">
+                                    <div class="body">
+                                        <div class="body table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <!-- <tr>
+                                                    <th>#</th>
+                                                    <th>نام کوچک</th>
+                                                  
+                                                </tr> -->
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="l-pink">
+                                                        <th scope="row">1</th>
+                                                        <td>نام</td>
+                                                        <td> <%= user.firstName %></td>
+
+                                                    </tr>
+                                                    <tr class="l-turquoise">
+                                                        <th scope="row">2</th>
+                                                        <td>نام خانوادگی</td>
+                                                        <td> <%= user.lastName %></td>
+                                                    </tr>
+                                                    <tr class="l-parpl">
+                                                        <th scope="row">3</th>
+                                                        <td>شماره تلفن</td>
+                                                        <td> <%= user.phones %></td>
+                                                    </tr>
+                                                    <tr class="l-blue">
+                                                        <th scope="row">4</th>
+                                                        <td>ایمیل</td>
+                                                        <td><%= user.email %></td>
+                                                    </tr>
+                                                    <tr class="l-blush">
+                                                        <th scope="row">5</th>
+                                                        <td>جنسیت</td>
+                                                        <td><%= user.gender %></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
-                            </div>           
-                        </div>
-                        <div class="tab-pane" id="Settings">
-                            <div class="card">
-                                <div class="body">
-                                    <h6>اطلاعات اولیه</h6>
-                                    <div class="row clearfix">
-                                        <div class="col-lg-12 col-md-12">
-                                            <div class="form-group">                                                
-                                                <input type="text" class="form-control" placeholder="نام">
-                                            </div>
-                                            <div class="form-group">                                                
-                                                <input type="text" class="form-control" placeholder="نام خانوادگی">
-                                            </div>
-                                            <div class="form-group">
-                                                <div>
-                                                    <label class="fancy-radio">
-                                                        <input name="gender2" value="male" type="radio" checked>
-                                                        <span><i></i>زن</span>
-                                                    </label>
-                                                    <label class="fancy-radio">
-                                                        <input name="gender2" value="female" type="radio">
-                                                        <span><i></i>مرد</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="icon-calendar"></i></span>
+                            </div>
+                            <div class="tab-pane" id="Settings">
+                                <form id="#editInfoForm">
+                                    <div class="card">
+                                        <div class="body">
+                                            <h6>اطلاعات اولیه</h6>
+                                            <div class="row clearfix">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" name="firstName"
+                                                            value=<%= user.firstName %> placeholder="نام">
                                                     </div>
-                                                    <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder="Birthdate">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" name="lastName"
+                                                            value=<%= user.lastName %> placeholder="نام خانوادگی">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div>
+                                                            <label class="fancy-radio">
+                                                                <input name="gender2" value="male" type="radio"
+                                                                    <% if (user.gender === "female"){ %> checked
+                                                                    <% } %>>
+                                                                <span><i></i>زن</span>
+                                                            </label>
+                                                            <label class="fancy-radio">
+                                                                <input name="gender2" value="female" type="radio"
+                                                                    <% if (user.gender === "male"){ %> checked <% } %>>
+                                                                <span><i></i>مرد</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-lg-12 col-md-12">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" name="userName"
+                                                            value=<%= user.userName %> disabled
+                                                            placeholder="نام کاربری">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="email" class="form-control" name="email"
+                                                            value=<%= user.email %> placeholder="ایمیل">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" name="phones"
+                                                            value=<%= user.phones %> placeholder="شماره تلفن">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12">
+                                                    <h6>تعییر رمز عبور</h6>
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control" name="password"
+                                                            placeholder="رمز عبور فعلی">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control"
+                                                            placeholder="رمز عبور جدید">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control"
+                                                            placeholder="تایید رمز عبور جدید">
+                                                    </div>
                                                 </div>
                                             </div>
-                                          
+                                            <button type="button" class="btn btn-primary" id="saveEdit">بروز
+                                                رسانی</button>
+                                            &nbsp;&nbsp;
+                                            <button type="button" class="btn btn-default">لفو</button>
                                         </div>
-                                      
                                     </div>
-                                    <button type="button" class="btn btn-primary">بروز رسانی</button> &nbsp;&nbsp;
-                                    <button type="button" class="btn btn-default">لفو</button>
-                                </div>
+                                </form>
                             </div>
-                            <div class="card">
-                                <div class="body">
-                                    <div class="row clearfix">
-                                        <div class="col-lg-12 col-md-12">
-                                            <h6>اطلاعات حساب</h6>
-                                            <div class="form-group">                                                
-                                                <input type="text" class="form-control" value="samuelmorris" disabled placeholder="نام کاربری">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="email" class="form-control" value="samuelmorris.info@yourdomain.com" placeholder="ایمیل">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="شماره تلفن">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12">
-                                            <h6>تعییر رمز عبور</h6>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control" placeholder="رمز عبور فعلی">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control" placeholder="رمز عبور جدید">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control" placeholder="تایید رمز عبور جدید">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="btn btn-primary">بروز رسانی</button> &nbsp;&nbsp;
-                                    <button class="btn btn-default">لغو</button>
-                                </div>
-                            </div>                      
                         </div>
-                    </div>               
-                </div>
-                <div class="col-lg-3 col-md-12">
-                   
-                    <div class="card">
-                        <div class="header">
-                            <h2>آمار من</h2>
-                        </div>
-                        <div class="body">
-                            <ul class=" list-unstyled basic-list">
-                                <li><i class="icon-book-open m-r-5"></i> پروژه های فعال <span class="badge badge-primary">21</span></li>
-                                <li><i class="icon-list m-r-5"></i> وظیفه در انتظار <span class="badge-purple badge">50</span></li>
-                                <li><i class="icon-screen-tablet m-r-5"></i> بلیط های پشتیبانی<span class="badge-success badge">9</span></li>
-                                <li><i class="icon-tag m-r-5"></i> پروژه های جدید<span class="badge-info badge">7</span></li>
-                            </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+
+                        <div class="card">
+                            <div class="header">
+                                <h2>آمار من</h2>
+                            </div>
+                            <div class="body">
+                                <ul class=" list-unstyled basic-list">
+                                    <li><i class="icon-book-open m-r-5"></i> پروژه های فعال <span
+                                            class="badge badge-primary">21</span></li>
+                                    <li><i class="icon-list m-r-5"></i> وظیفه در انتظار <span
+                                            class="badge-purple badge">50</span></li>
+                                    <li><i class="icon-screen-tablet m-r-5"></i> بلیط های پشتیبانی<span
+                                            class="badge-success badge">9</span></li>
+                                    <li><i class="icon-tag m-r-5"></i> پروژه های جدید<span
+                                            class="badge-info badge">7</span></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Javascript -->
-<%- include('../partials/scripts') -%>
+    <!-- Javascript -->
+    <%- include('../partials/scripts') -%>
 
 </body>
+
 </html>

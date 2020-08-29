@@ -45,21 +45,35 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="card profile-header">
                             <div class="body">
-                                <div class="profile-image"> <img src="/images/default.jpg" id="avatarImage"
-                                        class="rounded-circle" alt=""> </div>
+                                <div class="profile-image">
+                                    <img src="/images/man-default-avatar.jpg" id="avatarImage" class="rounded-circle"
+                                        alt="">
+                                    <% if(user.avatar){ %>
+                                    <img src="/images/avatar/<%= user.avatar %>" id="avatarImage"
+                                        class="rounded-circle">
+                                    <% }
+                                        else if(user.gender==="male"){ %>
+                                    <img src="/images/man-default-avatar.png" class="rounded-circle">
+                                    <% }
+                                        else{ %>
+                                    <img src="/images/woman-default-avatar.png" class="rounded-circle">
+                                    <% } %>
+                                </div>
                                 <div>
+
                                     <h4 class="m-b-0"><strong><%= user.firstName %> <%= user.lastName %></strong> </h4>
                                     <!-- <p class="font-14 m-b-0 m-t-10">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. </p> -->
                                 </div>
                                 <div class="input-group">
-                                        
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="field-file">
-                                            <label class="custom-file-label" >انتخاب فایل</label>
-                                        </div>
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button" id="saveAvatar">ارسال</button>
-                                        </div>
+
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="field-file">
+                                        <label class="custom-file-label">انتخاب فایل</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button"
+                                            id="saveAvatar">ارسال</button>
+                                    </div>
                                 </div>
 
                             </div>

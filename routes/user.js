@@ -131,7 +131,7 @@ router.put('/update', async (req, res) => {
 /////////////////////////////////////////////
 
 router.post('/uploadAvatar', (req, res) => {
-console.log(3232);
+
   const upload = uploadAvatar.single('avatar');
   upload(req, res, async err => {
      
@@ -143,8 +143,7 @@ console.log(3232);
           return res.status(500).send(err)
       }
       try {
-        console.log(req.body);
-        console.log(req.file);
+       
           //update user avatar and get oldUser for delete old avatar file
           const LAST_USER = await User.findByIdAndUpdate(req.session.user._id, {
               avatar: req.file.filename
@@ -157,15 +156,13 @@ console.log(3232);
           //update session.user.avatar
           req.session.user.avatar = req.file.filename;
           return res.json({
-              message: "تصویر پروفایل با موفقیت تغییر کرد",
-              color: 'alert-success',
+            
               avatar: req.file.filename
 
           })
       } catch (err) {
           return res.json({
-              message: "تصویر بارگذاری نشد",
-              color: 'alert-danger'
+             
           })
       }
   })

@@ -35,16 +35,30 @@
                         </li>
                         <li class="dropdown">
                             <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
-                                <img class="rounded-circle" src="/template/assets/images/user-small.png" width="30" alt="">
+                                <img class="rounded-circle" src="/images/man-default-avatar.jpg" id="avatarImageLitel" width="30" alt="">
+                                <% if(user.avatar){ %>
+                                    <img src="/images/avatar/<%= user.avatar %>" id="avatarImageLitel" class="rounded-circle">
+                                  <% }else if(user.gender==="male"){ %>
+                                      <img src="/images/man-default-avatar.png" class="rounded-circle">
+                                      <% }else{ %>
+                                          <img src="/images/woman-default-avatar.png" class="rounded-circle">
+                                          <% } %>
                             </a>
                             <div class="dropdown-menu animated flipInY user-profile">
                                 <div class="d-flex p-3 align-items-center">
                                     <div class="drop-left m-l-10">
-                                        <img src="/template/assets/images/user-small.png" class="rounded" width="50" alt="">
+                                        <img src="/images/man-default-avatar.jpg" id="avatarImageMid"" class="rounded" width="50" alt="">
+                                        <% if(user.avatar){ %>
+                                            <img src="/images/avatar/<%= user.avatar %>" id="avatarImageMid" class="rounded" width="50">
+                                          <% }else if(user.gender==="male"){ %>
+                                              <img src="/images/man-default-avatar.png" class="rounded">
+                                              <% }else{ %>
+                                                  <img src="/images/woman-default-avatar.png" class="rounded">
+                                                  <% } %>
                                     </div>
                                     <div class="drop-right">
-                                        <h4>ساموئل موریس</h4>
-                                        <p class="user-name">samuelmorris@info.com</p>
+                                        <h4> <%= user.firstName %></h4>
+                                        <p class="user-name"><%= user.email %></p>
                                     </div>
                                 </div>
                                 <div class="m-t-10 p-3 drop-list">

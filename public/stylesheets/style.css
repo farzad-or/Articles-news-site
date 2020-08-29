@@ -1,8 +1,16 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+#avatarImage {
+  max-width: 150px;
+  height: 150px;
+  display: flex;
+  overflow: hidden;
+
+}
+ #avatarImageLitel {
+  max-width: 30px;
+  height: 30px;
 }
 
-a {
-  color: #00B7FF;
-}
+#avatarImageLitel {
+  max-width: 50px;
+  height: 50px;
+} 

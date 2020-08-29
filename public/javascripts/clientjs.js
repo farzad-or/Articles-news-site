@@ -120,7 +120,6 @@ console.log(getFormData('editInfoForm'));
 $('#saveAvatar').click(function () {
 
     if (!$('#field-file').val()) {
-        // notification("یک تصویر انتخاب کنید", "alert-warning");
     } else {
         let formData = new FormData();
         let files = $('#field-file')[0].files[0];
@@ -134,11 +133,11 @@ console.log(formData);
             processData: false,
             success: function (res) {
 
-                // notification(res.message, res.color);
                 if (res.avatar) {
-                    // $('#avatarImg img.avatar-130').attr('src', `/images/avatar/${res.avatar}`)
                     $('#avatarImage').attr('src', `/images/avatar/${res.avatar}`)
-                    // avatarCancel();
+                    $('#avatarImageLitel').attr('src', `/images/avatar/${res.avatar}`)
+                    $('#avatarImageMid').attr('src', `/images/avatar/${res.avatar}`)
+
                 }
             }
         });
